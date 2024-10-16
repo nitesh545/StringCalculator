@@ -4,6 +4,10 @@ import {Box, Button, Card, Container, TextField, Typography} from "@mui/material
 import {useState} from "react";
 import InputCard from "./Components/InputCard";
 
+function sum() {
+	return 0;
+}
+
 function App() {
 	let [stringAndSum, setStringAndSum] = useState({
 		inputString: "",
@@ -16,3 +20,4 @@ function App() {
 }
 
 export default App;
+module.exports = {sum};

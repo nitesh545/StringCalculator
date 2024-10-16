@@ -61,3 +61,10 @@ I ended up deciding to give background a light color and ```<Card> from material
 on this card like ```complementary```, ```tetradic```, ```triadic``` and ```analogous``` but nothing was fitting well. Black was a better fit for text.
 ### Conclusion:
 Started with basic design layout, look and feel of Application.
+
+### Commit 2: Following TDD
+This commit is made to share that TDD is being followed. I have a function ```sum()``` in ```App.js``` which is exported using
+```module.exports = {sum}```. This function in used in ```App.test.js``` for tests.<br>
+At the moment, there are 2 tests, 1 with an empty string ```" "``` and another test case has a string literal ```"100"```.<br>
+Our function ```sum()``` only has functionality to ```return 0```. Hence, first test case is cleared but second fails.<br>
+Next steps would be to evolve the ```sum()``` and to setup test cases for testing right functionality. 
