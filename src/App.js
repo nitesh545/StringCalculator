@@ -8,7 +8,9 @@ function sum(inputString) {
 	if(inputString.length < 1){
 		return 0;
 	}
-	let numbers = inputString.split(',').map((x)=>parseInt(x));
+	let delimiter = ';';
+	inputString = inputString.replace(/[\s,]+/g, delimiter);
+	let numbers = inputString.split(delimiter).map((x)=>parseInt(x));
 	let sumOfNumbers = numbers.reduce((sumVal, number) => sumVal + number, 0);
 	return sumOfNumbers;
 }

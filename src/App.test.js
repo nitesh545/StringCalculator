@@ -15,3 +15,7 @@ test("two numbers", () => {
 test("multiple numbers", () => {
 	expect(sum("1, 5, 8, 9 ,1 ,2")).toBe(26);
 })
+
+test("number on next line", () => {
+	expect(sum("1\n2,3")).toBe(6);
+})

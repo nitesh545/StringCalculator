@@ -81,3 +81,7 @@ With this commit, we have 1st step complete.
 ### Commit 4: handle multiple numbers
 Input string with multiple numbers can be added.<br>
 For example: ```"1, 5, 8, 9, 1, 2"``` should give me a value ```26```
+
+### Commit 5: handle numbers on next line
+Input string with multiple numbers with some numbers probably on next line. <br>
+For example: ```"1\n2,3"``` should give me a value ```6```
