@@ -7,17 +7,18 @@ export default function InputCard(props) {
 			<Container className='App' sx={{
 				display: 'flex',
 				flexDirection: 'column',
-				padding: '1rem',
+				// padding: '1rem',
 				width: '28vw',
 				justifyContent: 'center',
 				alignItems: 'center',
 				alignContent: 'center',
 			}}>
+				<Typography variant='h2' align='center' py={25}>String Calculator - Add</Typography>
 				<Card sx={{
 					display: 'flex',
 					flexDirection: 'column',
-					padding: '1rem',
-					mt: '25vh',
+					// padding: '1rem',
+					// mt: '5vh',
 					backgroundColor: '#FFD700',
 				}} elevation={10}>
 					<Typography variant="h4" p={4}>Give in your input please: </Typography>

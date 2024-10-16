@@ -17,11 +17,10 @@ export function sum(inputString) {
 		inputString = inputString.replace(slc, '');
 	}
 	inputString = inputString.replace(/[\s,]+/g, delimiter);
-	console.log(inputString);
-	let numbers = inputString.split(delimiter).map((x) => parseInt(x));
-	console.log(numbers);
-	let negNumbers = numbers.filter((x) => x < 0);
 
+	let numbers = inputString.split(delimiter).map((x) => parseInt(x));
+	numbers = numbers.filter((x)=>x<=1000);
+	let negNumbers = numbers.filter((x) => x < 0);
 	let negNumbersString = negNumbers.join(', ');
 	if (negNumbers.length > 0) {
 		throw new Error(`negative numbers not allowed ${negNumbersString}`);

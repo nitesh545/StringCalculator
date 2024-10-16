@@ -102,3 +102,7 @@ For example: ```"//'\n1;2;-4;-5;-100;-2"``` should give me a value ```"negative 
 
 ### Commit 9: functionality added to application
 Now we can add string in ```<TextField>``` to give in the string we want and it will calculate answer.
+
+### Commit 10: numbers less than 1001
+Only numbers that are less than or equal to 1000 are considered for sum operation.
+Greater numbers are ignored.

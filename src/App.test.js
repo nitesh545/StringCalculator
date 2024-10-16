@@ -32,3 +32,11 @@ test("negative numbers should not be allowed", () => {
 test("multiple negative numbers should not be allowed", () => {
 	expect(()=>sum("//;\n1;2;-4;-5;-100;-2")).toThrow(`negative numbers not allowed -4, -5, -100, -2`);
 })
+
+test("numbers should not be greater that 1000", () => {
+	expect(sum("1001, 2")).toBe(2);
+})
+
+test("numbers should be less than or equal to 1000", () => {
+	expect(sum("1000, 2")).toBe(1002);
+})
