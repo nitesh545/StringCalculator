@@ -9,6 +9,10 @@ function sum(inputString) {
 		return 0;
 	}
 	let delimiter = ';';
+	if(inputString.includes("//")){
+		delimiter = inputString[2];
+		inputString = inputString.replace(`//${delimiter}\n`, '');
+	}
 	inputString = inputString.replace(/[\s,]+/g, delimiter);
 	let numbers = inputString.split(delimiter).map((x)=>parseInt(x));
 	let sumOfNumbers = numbers.reduce((sumVal, number) => sumVal + number, 0);

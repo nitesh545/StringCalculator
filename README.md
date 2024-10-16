@@ -91,3 +91,7 @@ I have not coded anything for fixing this yet. But here is a test that takes in 
 There are multiple ways to handle this, one of the ways is to check if ```"//;\n1;2".includes('//')``` and get the next element.
 Another approach is to split on whitespace like ```\n``` and get 1st element, and then check for delimiter, just like in first approach.<br>
 Here, I am trying to brainstorm the best possible way to extract delimiter out of given string, keeping time and space complexities in mind.
+
+### Commit 7: support for different delimiters
+We can have different delimiter for string for separation of numbers in string.
+For example: ```"//'\n1;2"``` should give me a value ```3```.
