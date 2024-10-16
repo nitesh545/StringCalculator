@@ -77,3 +77,7 @@ Next steps would be to evolve the ```sum()``` and to setup test cases for testin
 <br>
 
 With this commit, we have 1st step complete.
+
+### Commit 4: handle multiple numbers
+Input string with multiple numbers can be added.<br>
+For example: ```"1, 5, 8, 9, 1, 2"``` should give me a value ```26```

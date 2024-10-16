@@ -8,7 +8,7 @@ function sum(inputString) {
 	if(inputString.length < 1){
 		return 0;
 	}
-	let numbers = inputString.split(",").map((x)=>parseInt(x));
+	let numbers = inputString.split(',').map((x)=>parseInt(x));
 	let sumOfNumbers = numbers.reduce((sumVal, number) => sumVal + number, 0);
 	return sumOfNumbers;
 }

@@ -11,3 +11,7 @@ test('One number', () => {
 test("two numbers", () => {
 	expect(sum("1, 5")).toBe(6);
 })
+
+test("multiple numbers", () => {
+	expect(sum("1, 5, 8, 9 ,1 ,2")).toBe(26);
+})
