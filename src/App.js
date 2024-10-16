@@ -4,21 +4,26 @@ import {Box, Button, Card, Container, TextField, Typography} from "@mui/material
 import {useState} from "react";
 import InputCard from "./Components/InputCard";
 
-function sum(inputString) {
-	if(inputString.length < 1){
+export function sum(inputString) {
+	inputString = inputString.trim();
+	if (inputString.length < 1) {
 		return 0;
 	}
 	let delimiter = ';';
-	if(inputString.includes("//")){
+	if (inputString.includes("//")) {
 		delimiter = inputString[2];
-		inputString = inputString.replace(`//${delimiter}\n`, '');
+		let firstNextLine = inputString.indexOf('\n');
+		let slc = inputString.slice(0, 4);
+		inputString = inputString.replace(slc, '');
 	}
 	inputString = inputString.replace(/[\s,]+/g, delimiter);
-	let numbers = inputString.split(delimiter).map((x)=>parseInt(x));
-	let negNumbers = numbers.filter((x)=> x<0);
+	console.log(inputString);
+	let numbers = inputString.split(delimiter).map((x) => parseInt(x));
+	console.log(numbers);
+	let negNumbers = numbers.filter((x) => x < 0);
 
 	let negNumbersString = negNumbers.join(', ');
-	if(negNumbers.length > 0){
+	if (negNumbers.length > 0) {
 		throw new Error(`negative numbers not allowed ${negNumbersString}`);
 	}
 
@@ -33,9 +38,8 @@ function App() {
 	});
 
 	return (
-		<InputCard stringAndSum={stringAndSum} setStringAndSum={setStringAndSum} />
+		<InputCard stringAndSum={stringAndSum} setStringAndSum={setStringAndSum} sum={sum}/>
 	);
 }
 
 export default App;
-module.exports = {sum};

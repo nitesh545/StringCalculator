@@ -1,4 +1,5 @@
-let {sum} = require("./App")
+// let {sum} = require("./App")
+import {sum} from "./App.js"
 
 test('empty string', () => {
 	expect(sum('')).toBe(0);
