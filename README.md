@@ -44,3 +44,20 @@ Input: “1,5”, Output: 6<br>
 First, I will try to complete in-hand task with following:
 1) ReactJS - For building components and App
 2) Material UI - For UI
+
+## Documentation
+
+### Commit 1 : Design and layout of application
+#### Functionality decisions:
+I started with creating a basic layout - there should be text, requesting for user input: ```<Typogrphy> from material ui```, 
+an input field in which user can give input: ```<TextField> in material ui```, a button ```<Button> in material ui``` clicking
+on which state in react for ```stringAndSum``` should update.<br>
+I named the state variable ```stringAndSum``` because initially I created two state variables ```inputVariables``` and ```answer```,
+so I combined them together in an object and created a state variable out of it.
+Later, I decided to make this a component in itself for modularity and make ```App.js``` look cleaner to read: ```InputCard```.
+#### Design decisions:
+The requirement of application is to calculate sum of given string, so I decided to keep things simple in UI.
+I ended up deciding to give background a light color and ```<Card> from material UI``` Golden color. I tried various colors for text
+on this card like ```complementary```, ```tetradic```, ```triadic``` and ```analogous``` but nothing was fitting well. Black was a better fit for text.
+### Conclusion:
+Started with basic design layout, look and feel of Application.

@@ -1,25 +1,18 @@
 import logo from './logo.svg';
 import './App.css';
+import {Box, Button, Card, Container, TextField, Typography} from "@mui/material";
+import {useState} from "react";
+import InputCard from "./Components/InputCard";
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	let [stringAndSum, setStringAndSum] = useState({
+		inputString: "",
+		answer: 0,
+	});
+
+	return (
+		<InputCard stringAndSum={stringAndSum} setStringAndSum={setStringAndSum} />
+	);
 }
 
 export default App;
