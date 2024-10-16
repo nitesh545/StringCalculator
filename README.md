@@ -95,3 +95,7 @@ Here, I am trying to brainstorm the best possible way to extract delimiter out o
 ### Commit 7: support for different delimiters
 We can have different delimiter for string for separation of numbers in string.
 For example: ```"//'\n1;2"``` should give me a value ```3```.
+
+### Commit 8: negative numbers should throw error
+Any and all negative number's presence throw error.
+For example: ```"//'\n1;2;-4;-5;-100;-2"``` should give me a value ```"negative numbers not allowed -4, -5, -100, -2"```.

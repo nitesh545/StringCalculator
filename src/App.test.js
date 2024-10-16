@@ -23,3 +23,11 @@ test("number on next line", () => {
 test("numbers with delimiter", () => {
 	expect(sum("//;\n1;2")).toBe(3);
 })
+
+test("negative numbers should not be allowed", () => {
+	expect(()=>sum("//;\n1;2;-4")).toThrow(`negative numbers not allowed -4`);
+})
+
+test("multiple negative numbers should not be allowed", () => {
+	expect(()=>sum("//;\n1;2;-4;-5;-100;-2")).toThrow(`negative numbers not allowed -4, -5, -100, -2`);
+})

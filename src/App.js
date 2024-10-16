@@ -15,6 +15,13 @@ function sum(inputString) {
 	}
 	inputString = inputString.replace(/[\s,]+/g, delimiter);
 	let numbers = inputString.split(delimiter).map((x)=>parseInt(x));
+	let negNumbers = numbers.filter((x)=> x<0);
+
+	let negNumbersString = negNumbers.join(', ');
+	if(negNumbers.length > 0){
+		throw new Error(`negative numbers not allowed ${negNumbersString}`);
+	}
+
 	let sumOfNumbers = numbers.reduce((sumVal, number) => sumVal + number, 0);
 	return sumOfNumbers;
 }
