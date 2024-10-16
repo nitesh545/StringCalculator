@@ -4,8 +4,13 @@ import {Box, Button, Card, Container, TextField, Typography} from "@mui/material
 import {useState} from "react";
 import InputCard from "./Components/InputCard";
 
-function sum() {
-	return 0;
+function sum(inputString) {
+	if(inputString.length < 1){
+		return 0;
+	}
+	let numbers = inputString.split(",").map((x)=>parseInt(x));
+	let sumOfNumbers = numbers.reduce((sumVal, number) => sumVal + number, 0);
+	return sumOfNumbers;
 }
 
 function App() {

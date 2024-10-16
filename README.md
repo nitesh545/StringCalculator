@@ -67,4 +67,13 @@ This commit is made to share that TDD is being followed. I have a function ```su
 ```module.exports = {sum}```. This function in used in ```App.test.js``` for tests.<br>
 At the moment, there are 2 tests, 1 with an empty string ```" "``` and another test case has a string literal ```"100"```.<br>
 Our function ```sum()``` only has functionality to ```return 0```. Hence, first test case is cleared but second fails.<br>
-Next steps would be to evolve the ```sum()``` and to setup test cases for testing right functionality. 
+Next steps would be to evolve the ```sum()``` and to setup test cases for testing right functionality.
+
+### Commit 3: tested till 2 numbers
+3 test cases are created so far to test if my algorithm works for:
+1) Empty String
+2) String with only 1 number
+3) String with 2 comma seperated numbers.
+<br>
+
+With this commit, we have 1st step complete.

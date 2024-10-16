@@ -5,5 +5,9 @@ test('empty string', () => {
 })
 
 test('One number', () => {
-	expect(sum("100")).toBe(100);
+	expect(sum("1")).toBe(1);
+})
+
+test("two numbers", () => {
+	expect(sum("1, 5")).toBe(6);
 })
