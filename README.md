@@ -85,3 +85,9 @@ For example: ```"1, 5, 8, 9, 1, 2"``` should give me a value ```26```
 ### Commit 5: handle numbers on next line
 Input string with multiple numbers with some numbers probably on next line. <br>
 For example: ```"1\n2,3"``` should give me a value ```6```
+
+### Commit 6: test case failed for getting delimiter
+I have not coded anything for fixing this yet. But here is a test that takes in a string ```"//;\n1;2"```.<br>
+There are multiple ways to handle this, one of the ways is to check if ```"//;\n1;2".includes('//')``` and get the next element.
+Another approach is to split on whitespace like ```\n``` and get 1st element, and then check for delimiter, just like in first approach.<br>
+Here, I am trying to brainstorm the best possible way to extract delimiter out of given string, keeping time and space complexities in mind.

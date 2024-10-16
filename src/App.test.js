@@ -19,3 +19,7 @@ test("multiple numbers", () => {
 test("number on next line", () => {
 	expect(sum("1\n2,3")).toBe(6);
 })
+
+test("numbers with delimiter", () => {
+	expect(sum("//;\n1;2")).toBe(3);
+})
