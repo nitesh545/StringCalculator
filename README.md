@@ -111,3 +111,7 @@ Greater numbers are ignored.
 Delimiters can be of length greater than 1 character.
 For example: ```//****\n1****4****5``` gives ```10``` as output.
 Confirmed with one more test case: ```//delimit\n1delimit4delimit5``` gives 10 as output.
+
+### Commit 12: multiple delimiters
+Multiple delimiters allowed.
+For example: ```//[;][%]\n2;4%4"``` give ```10``` as output.

@@ -42,9 +42,13 @@ test("numbers should be less than or equal to 1000", () => {
 })
 
 test("long delimiter 1", ()=>{
-	expect(sum("//****\n1****4****5")).toBe(10);
+	expect(sum("//[****]\n1****4****5")).toBe(10);
 })
 
 test("long delimiter 2", ()=>{
-	expect(sum("//delimit\n1delimit4delimit5")).toBe(10);
+	expect(sum("//[delimit]\n1delimit4delimit5")).toBe(10);
+})
+
+test("multiple delimiter", () => {
+	expect(sum("//[;][%]\n2;4%4")).toBe(10);
 })

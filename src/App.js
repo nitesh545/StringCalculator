@@ -10,13 +10,28 @@ export function sum(inputString) {
 		return 0;
 	}
 	let delimiter = ';';
+	let delimiters = [];
 	if (inputString.includes("//")) {
 		let firstNextLine = inputString.indexOf('\n');
 		let slc = inputString.slice(0, firstNextLine+1);
-		delimiter = slc.slice(2, firstNextLine);
+		let delimiters_string = slc.slice(2, firstNextLine);
+		if(delimiters_string[0] === '[') {
+			for(let i=0;i<delimiters_string.length;i++){
+				if(delimiters_string[i] === '['){
+					while(delimiters_string[i] !== ']'){
+						delimiters.push(delimiters_string[i++]);
+					}
+				}
+			}
+		}
+
+		delimiters = delimiters.join('');
 		inputString = inputString.replace(slc, '');
 	}
+
 	inputString = inputString.replace(/[\s,]+/g, delimiter);
+
+	inputString = inputString.split('').map((x)=> (delimiters.includes(x)) ? delimiter : x).join('');
 
 	let numbers = inputString.split(delimiter).map((x) => parseInt(x));
 	numbers = numbers.filter((x)=>x<=1000);
