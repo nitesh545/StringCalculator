@@ -21,3 +21,6 @@ A string like ```"1\n5, 4"``` should give output ```10```.
 
 ## Commit 7: given delimiter
 A string like ```"//%\n1%5%4"``` should give output ```10```.
+
+## Commit 8: panic on detecting negative numbers
+A string lke ```"//$\n1$5$-4$-2$-6$-8"``` should panic and display message ```negative numbers not allowed -4 -2 -6 -8```.
