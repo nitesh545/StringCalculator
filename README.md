@@ -106,3 +106,8 @@ Now we can add string in ```<TextField>``` to give in the string we want and it 
 ### Commit 10: numbers less than 1001
 Only numbers that are less than or equal to 1000 are considered for sum operation.
 Greater numbers are ignored.
+
+### Commit 11: longer delimiter
+Delimiters can be of length greater than 1 character.
+For example: ```//****\n1****4****5``` gives ```10``` as output.
+Confirmed with one more test case: ```//delimit\n1delimit4delimit5``` gives 10 as output.

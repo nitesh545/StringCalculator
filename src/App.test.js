@@ -40,3 +40,11 @@ test("numbers should not be greater that 1000", () => {
 test("numbers should be less than or equal to 1000", () => {
 	expect(sum("1000, 2")).toBe(1002);
 })
+
+test("long delimiter 1", ()=>{
+	expect(sum("//****\n1****4****5")).toBe(10);
+})
+
+test("long delimiter 2", ()=>{
+	expect(sum("//delimit\n1delimit4delimit5")).toBe(10);
+})

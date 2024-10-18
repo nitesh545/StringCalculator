@@ -11,9 +11,9 @@ export function sum(inputString) {
 	}
 	let delimiter = ';';
 	if (inputString.includes("//")) {
-		delimiter = inputString[2];
 		let firstNextLine = inputString.indexOf('\n');
-		let slc = inputString.slice(0, 4);
+		let slc = inputString.slice(0, firstNextLine+1);
+		delimiter = slc.slice(2, firstNextLine);
 		inputString = inputString.replace(slc, '');
 	}
 	inputString = inputString.replace(/[\s,]+/g, delimiter);
