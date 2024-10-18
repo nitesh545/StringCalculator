@@ -30,7 +30,7 @@ export default function InputCard(props) {
 					<Button sx={{margin: '1rem'}} variant='contained' onClick={() => {
 						props.setStringAndSum({
 							...props.stringAndSum,
-							answer: props.sum(props.stringAndSum.inputString)
+							answer: props.add(props.stringAndSum.inputString)
 						});
 					}}>Calculate</Button>
 					<Typography p={4} variant='h4'>Sum of numbers in string: {props.stringAndSum.answer}</Typography>

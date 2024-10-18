@@ -4,7 +4,7 @@ import {Box, Button, Card, Container, TextField, Typography} from "@mui/material
 import {useState} from "react";
 import InputCard from "./Components/InputCard";
 
-export function sum(inputString) {
+export function add(inputString) {
 	// detect list of all provided delimiters
 	function detect_delimiters(inString) {
 		let outString = [];
@@ -76,7 +76,7 @@ function App() {
 	});
 
 	return (
-		<InputCard stringAndSum={stringAndSum} setStringAndSum={setStringAndSum} sum={sum}/>
+		<InputCard stringAndSum={stringAndSum} setStringAndSum={setStringAndSum} add={add}/>
 	);
 }
 
