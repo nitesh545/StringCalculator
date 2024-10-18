@@ -49,6 +49,10 @@ test("long delimiter 2", ()=>{
 	expect(sum("//[delimit]\n1delimit4delimit5")).toBe(10);
 })
 
-test("multiple delimiter", () => {
+test("multiple delimiters", () => {
 	expect(sum("//[;][%]\n2;4%4")).toBe(10);
+})
+
+test("multiple longer delimiters", () => {
+	expect(sum("//[abc][*&^]\n2abc4*&^4")).toBe(10);
 })
