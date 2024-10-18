@@ -11,3 +11,7 @@ A string like ```"1"``` gives output ```1```.
 
 ## Commit 4: string upto 2 numbers
 A string like ```"1, 4"``` should give output ```5```.
+
+## Commit 5: string with multiple numbers
+A string like ```"1, 4, 2, 8"``` should give output ```15```.<br>
+Test case passed in first run without modifying code. Code from last commit was good enough.
