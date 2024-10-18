@@ -54,7 +54,6 @@ fn add(input_string: String) -> i32 {
         for i in 0..given_delimiters.len() {
             given_string = given_string.replace(given_delimiters[i].as_str(), default_delimiter.as_str());
         }
-        // given_string = given_string.replace(given_delimiter.as_str(), default_delimiter.as_str());
     }
     else {
         given_string = given_string.replace(",", default_delimiter.as_str());
@@ -132,6 +131,11 @@ mod tests {
     #[test]
     fn multiple_delimiters() {
         assert_eq!(add(String::from("//[%][^][;]\n1%5^4;10")), 20);
+    }
+
+    #[test]
+    fn multiple_longer_delimiters() {
+        assert_eq!(add(String::from("//[$$$][^^^][%^%]\n1$$$5^^^4%^%10")), 20);
     }
 }
 
