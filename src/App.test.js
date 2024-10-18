@@ -22,7 +22,7 @@ test("number on next line", () => {
 })
 
 test("numbers with delimiter", () => {
-	expect(add("//;\n1;2")).toBe(3);
+	expect(add("//^\n1^2")).toBe(3);
 })
 
 test("negative numbers should not be allowed", () => {

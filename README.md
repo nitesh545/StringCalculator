@@ -133,3 +133,7 @@ to be as 1 product algorithm. So, it's another design choice.)
 At this point, we have string calculator complete.<br>
 I have been working with rust programming language to build my own game engine. I am extremely curious if I can complete same using rust.
 So, here on forward, I am targeting to build logic for ```sum()``` from scratch but using rust. I have already developed logic and pseudo code.
+
+### Commit 16: fixed working of 1 test case
+Test case was: ```//;\n1;5```, output was ```6``` but default delimiter hardcoded in program was ```;``` as well.
+When tried with ```^```, this testcase failed. After fix, it performs well with character delimiter.

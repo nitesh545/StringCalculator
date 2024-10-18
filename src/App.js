@@ -40,7 +40,10 @@ export function add(inputString) {
 		let delimiters_string = slc.slice(2, firstNextLine);
 		if(delimiters_string[0] === '[') {
 			delimiters = detect_delimiters(delimiters_string);
-			console.log(delimiters);
+		}
+		else if (delimiters_string.length === 1) {
+			delimiters.push(delimiters_string[0]);
+			delimiters = delimiters.join('');
 		}
 
 		//remove first line from input string as it only provides delimiter
