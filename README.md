@@ -18,3 +18,6 @@ Test case passed in first run without modifying code. Code from last commit was 
 
 ## Commit 6: string with whitespace like next line
 A string like ```"1\n5, 4"``` should give output ```10```.
+
+## Commit 7: given delimiter
+A string like ```"//%\n1%5%4"``` should give output ```10```.

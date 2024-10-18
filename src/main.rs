@@ -1,8 +1,44 @@
+fn check_if_delimiter_given(in_string: String) -> bool {
+    in_string.as_bytes()[0] == '/' as u8 && in_string.as_bytes()[1] == '/' as u8
+}
+
+fn get_delimiter(in_string: String) -> String {
+    let split_string = in_string.split_whitespace().map(String::from).collect::<Vec<String>>();
+    let first_string = split_string[0].clone();
+    let delimiter = first_string.replace("//", "");
+    delimiter
+}
+
+fn remove_delimiter_part(mut in_string: String) -> String {
+    let mut v = in_string.chars().collect::<Vec<char>>().into_iter().position(|x| x == '\n').unwrap();
+    while v != 0 {
+        in_string.remove(0);
+        v -= 1;
+    }
+    in_string.remove(0);
+    in_string
+}
+
 fn add(input_string: String) -> i32 {
     if input_string.is_empty() {return 0;}
 
-    let splitted_string: String = input_string.trim().split_whitespace().collect::<Vec<&str>>().join(",");
-    let trimmed_string: Vec<String> = splitted_string.split(',').filter(|&x| !x.is_empty()).map(|x| x.trim().to_string()).collect::<Vec<String>>();
+    let mut given_string = input_string.clone();
+
+    let default_delimiter: String = ";".to_string();
+    let mut given_delimiter: String = String::new();
+    let is_delimiter_given: bool = check_if_delimiter_given(input_string.clone());
+
+    if is_delimiter_given {
+        given_delimiter = get_delimiter(input_string.clone());
+        given_string = remove_delimiter_part(input_string.clone());
+        given_string = given_string.replace(given_delimiter.as_str(), default_delimiter.as_str());
+    }
+    else {
+        given_string = given_string.replace(",", default_delimiter.as_str());
+    }
+
+    let split_string: String = given_string.trim().split_whitespace().collect::<Vec<&str>>().join(default_delimiter.as_str());
+    let trimmed_string: Vec<String> = split_string.split(default_delimiter.as_str()).filter(|&x| !x.is_empty()).map(|x| x.trim().to_string()).collect::<Vec<String>>();
     let numbers: Vec<i32> = trimmed_string.into_iter().map(|x| x.parse::<i32>().unwrap()).collect::<Vec<i32>>();
     let sum: i32 = numbers.iter().fold(0, |acc, x| acc + x);
 
@@ -36,6 +72,11 @@ mod tests {
     #[test]
     fn numbers_with_whitespaces() {
         assert_eq!(add(String::from("1\n5, 4")), 10);
+    }
+
+    #[test]
+    fn different_delimiter() {
+        assert_eq!(add(String::from("//%\n1%5%4")), 10);
     }
 }
 
