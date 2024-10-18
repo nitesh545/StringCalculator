@@ -27,3 +27,6 @@ A string lke ```"//$\n1$5$-4$-2$-6$-8"``` should panic and display message ```ne
 
 ## Commit 9: each number should be lesser than 1000
 A string like ```"//$\n1$5$1005$1000"``` should give output ```1006```.
+
+## Commit 10: longer delimiter
+A string like ```"//[$$$$]\n1$$$$5$$$$4$$$$10"``` should give output ```20```.

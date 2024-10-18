@@ -5,7 +5,7 @@ fn check_if_delimiter_given(in_string: String) -> bool {
 fn get_delimiter(in_string: String) -> String {
     let split_string: Vec<String> = in_string.split_whitespace().map(String::from).collect::<Vec<String>>();
     let first_string: String = split_string[0].clone();
-    let delimiter: String = first_string.replace("//", "");
+    let mut delimiter: String = first_string.replace("//", "").replace("[", "").replace("]", "");
     delimiter
 }
 
@@ -105,6 +105,11 @@ mod tests {
     #[test]
     fn small_numbers() {
         assert_eq!(add(String::from("//$\n1$5$1005$1000")), 1006);
+    }
+
+    #[test]
+    fn long_delimiter() {
+        assert_eq!(add(String::from("//[$$$$]\n1$$$$5$$$$4$$$$10")), 20);
     }
 }
 
