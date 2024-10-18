@@ -4,7 +4,7 @@
 Created directory and pushed to github.
 
 ## Commit 2: empty string should give sum 0
-Empty string as input to my function ```sum()``` should render the output 0.
+Empty string as input to my function ```add()``` should render the output 0.
 
 ## Commit 3: string with 1 number
 A string like ```"1"``` gives output ```1```.
@@ -36,3 +36,9 @@ A string like ```"//[%][;][^]\n1%5^4;10"``` should give output ```20```.
 
 ## Commit 12: multiple longer delimiter
 A string like ```"//[$$$][^^^][%^%]\n1$$$5^^^4%^%10"``` should give output ```20```.
+
+## Commit 13 : no ui
+There are libraries like Yew with Trunk using which I can build UI for rust as well, just like I used Material UI for ReactJS.
+I could also use egui to quickly render things.<br>
+But given the time constraints, I am deciding to not make a web application or an executable and restrict the scope till the basic functionality,
+the working of ```add()``` function, while following the TDD approach.
