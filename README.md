@@ -2,6 +2,7 @@
 
 ## Application
 Please visit: https://vercel.live/link/string-calculator-blush.vercel.app
+<br>
 
 ## About
 This task involves to create a calculator which takes a string of numbers as argument for which we need to find sum.
@@ -44,9 +45,12 @@ Input: “1,5”, Output: 6<br>
 
 ## Technology used: 
 
-First, I will try to complete in-hand task with following:
+I have build solution following on "master" branch:
 1) ReactJS - For building components and App
 2) Material UI - For UI
+
+I have also build another solution on "master-rust" branch:
+1) Rust programming language
 
 ## Documentation
 
