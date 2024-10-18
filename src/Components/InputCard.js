@@ -13,7 +13,7 @@ export default function InputCard(props) {
 				alignItems: 'center',
 				alignContent: 'center',
 			}}>
-				<Typography variant='h2' align='center' py={25}>String Calculator - Add</Typography>
+				<Typography variant='h2' align='center' py={10}>String Calculator - Add</Typography>
 				<Card sx={{
 					display: 'flex',
 					flexDirection: 'column',
@@ -33,7 +33,7 @@ export default function InputCard(props) {
 							answer: props.sum(props.stringAndSum.inputString)
 						});
 					}}>Calculate</Button>
-					<Typography p={4} variant='h4'>{props.stringAndSum.answer}</Typography>
+					<Typography p={4} variant='h4'>Sum of numbers in string: {props.stringAndSum.answer}</Typography>
 				</Card>
 			</Container>
 		</Box>

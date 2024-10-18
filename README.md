@@ -124,3 +124,9 @@ For example: ```"//[abc][*&^]\n2abc4*&^4"``` give ```10``` as output.
 Made the sum() more readable. Added in comments for deeper understanding.<br>
 (I could have made the function ```function detect_delimiters(inString)``` outside the ```sum()``` function, but I wanted ```sum()```
 to be as 1 product algorithm. So, it's another design choice.)
+
+### Commit 15: confirmation with app
+```sum()``` is integrated with application.<br>
+At this point, we have string calculator complete.<br>
+I have been working with rust programming language to build my own game engine. I am extremely curious if I can complete same using rust.
+So, here on forward, I am targeting to build logic for ```sum()``` from scratch but using rust. I have already developed logic and pseudo code.
