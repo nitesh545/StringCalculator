@@ -30,3 +30,6 @@ A string like ```"//$\n1$5$1005$1000"``` should give output ```1006```.
 
 ## Commit 10: longer delimiter
 A string like ```"//[$$$$]\n1$$$$5$$$$4$$$$10"``` should give output ```20```.
+
+## Commit 11: multiple delimiter
+A string like ```"//[%][;][^]\n1%5^4;10"``` should give output ```20```.

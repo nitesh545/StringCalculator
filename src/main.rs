@@ -2,11 +2,25 @@ fn check_if_delimiter_given(in_string: String) -> bool {
     in_string.as_bytes()[0] == '/' as u8 && in_string.as_bytes()[1] == '/' as u8
 }
 
-fn get_delimiter(in_string: String) -> String {
+fn get_delimiter(in_string: String) -> Vec<String> {
     let split_string: Vec<String> = in_string.split_whitespace().map(String::from).collect::<Vec<String>>();
     let first_string: String = split_string[0].clone();
-    let mut delimiter: String = first_string.replace("//", "").replace("[", "").replace("]", "");
-    delimiter
+    let string_of_delimiters: String = first_string.replace("//", "");
+    let only_delimiter: String = string_of_delimiters.clone();
+    let mut delimiters: Vec<String> = Vec::new();
+    for mut i in 0..string_of_delimiters.len() {
+        if string_of_delimiters.as_bytes()[i] != '[' as u8 {continue;}
+
+        i += 1;
+        let mut delimiter_string: String = String::new();
+        while string_of_delimiters.as_bytes()[i] != ']' as u8 {
+            delimiter_string.push(string_of_delimiters.as_bytes()[i] as char);
+            i += 1;
+        }
+        delimiters.push(delimiter_string);
+    }
+    if delimiters.is_empty() {delimiters.push(only_delimiter)};
+    delimiters
 }
 
 fn remove_delimiter_part(mut in_string: String) -> String {
@@ -35,9 +49,12 @@ fn add(input_string: String) -> i32 {
     let is_delimiter_given: bool = check_if_delimiter_given(input_string.clone());
 
     if is_delimiter_given {
-        let given_delimiter: String = get_delimiter(input_string.clone());
+        let given_delimiters: Vec<String> = get_delimiter(input_string.clone());
         given_string = remove_delimiter_part(input_string.clone());
-        given_string = given_string.replace(given_delimiter.as_str(), default_delimiter.as_str());
+        for i in 0..given_delimiters.len() {
+            given_string = given_string.replace(given_delimiters[i].as_str(), default_delimiter.as_str());
+        }
+        // given_string = given_string.replace(given_delimiter.as_str(), default_delimiter.as_str());
     }
     else {
         given_string = given_string.replace(",", default_delimiter.as_str());
@@ -110,6 +127,11 @@ mod tests {
     #[test]
     fn long_delimiter() {
         assert_eq!(add(String::from("//[$$$$]\n1$$$$5$$$$4$$$$10")), 20);
+    }
+
+    #[test]
+    fn multiple_delimiters() {
+        assert_eq!(add(String::from("//[%][^][;]\n1%5^4;10")), 20);
     }
 }
 
