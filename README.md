@@ -8,14 +8,11 @@ Please visit: https://vercel.live/link/string-calculator-blush.vercel.app
 This task involves to create a calculator which takes a string of numbers as argument for which we need to find sum.
 We should follow Test Driven Development to complete this task.
 
-
 ## Steps
 1) Create a simple String calculator with a method signature like this:
 <br>
 <br>
-```
-int add(string numbers)
-```
+```int add(string numbers)```
 <br>
 
 ##### Input: 
@@ -141,3 +138,7 @@ So, here on forward, I am targeting to build logic for ```sum()``` from scratch 
 ### Commit 16: fixed working of 1 test case
 Test case was: ```//;\n1;5```, output was ```6``` but default delimiter hardcoded in program was ```;``` as well.
 When tried with ```^```, this testcase failed. After fix, it performs well with character delimiter.
+<br>
+<br>
+note: In later stages, I realised that the name of the function is ```add()``` and not ```sum()```. <br>
+If you find ```sum()``` anywhere in this readme, please think of it as ```add()```. I have already fixed this in code.
