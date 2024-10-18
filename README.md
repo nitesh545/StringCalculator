@@ -24,3 +24,6 @@ A string like ```"//%\n1%5%4"``` should give output ```10```.
 
 ## Commit 8: panic on detecting negative numbers
 A string lke ```"//$\n1$5$-4$-2$-6$-8"``` should panic and display message ```negative numbers not allowed -4 -2 -6 -8```.
+
+## Commit 9: each number should be lesser than 1000
+A string like ```"//$\n1$5$1005$1000"``` should give output ```1006```.

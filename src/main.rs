@@ -49,7 +49,9 @@ fn add(input_string: String) -> i32 {
 
     check_neg_nums(numbers.clone());
 
-    let sum: i32 = numbers.iter().fold(0, |acc, x| acc + x);
+    let small_numbers: Vec<i32> = numbers.into_iter().filter(|&x| x<= 1000 ).collect::<Vec<i32>>();
+
+    let sum: i32 = small_numbers.iter().fold(0, |acc, x| acc + x);
 
     sum
 }
@@ -98,6 +100,11 @@ mod tests {
     #[should_panic]
     fn negative_numbers_ii() {
         add(String::from("//$\n1$5$-4$-2$-6$-8"));
+    }
+
+    #[test]
+    fn small_numbers() {
+        assert_eq!(add(String::from("//$\n1$5$1005$1000")), 1006);
     }
 }
 
