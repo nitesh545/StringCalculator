@@ -119,3 +119,8 @@ For example: ```"//[;][%]\n2;4%4"``` give ```10``` as output.
 ### Commit 13: multiple longer delimiters
 Multiple delimiters allowed of variable length.
 For example: ```"//[abc][*&^]\n2abc4*&^4"``` give ```10``` as output.
+
+### Commit 14: Cleanup
+Made the sum() more readable. Added in comments for deeper understanding.<br>
+(I could have made the function ```function detect_delimiters(inString)``` outside the ```sum()``` function, but I wanted ```sum()```
+to be as 1 product algorithm. So, it's another design choice.)
